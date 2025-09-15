@@ -19,7 +19,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Путь к tesseract (для Windows)
+# Путь к tesseract (пример для Windows)
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\tesseract'
 
 
@@ -56,6 +56,7 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("Произошла ошибка при обработке изображения")
 
 
+# Обработчик любых других видов сообщений кроме фотографий
 async def handle_everything_else(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Простите, но я работаю только с изображениями")
 
